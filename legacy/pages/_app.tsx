@@ -1,7 +1,7 @@
 import React from "react";
 import App from "next/app";
 import Header from "../components/header";
-
+import ThemeProvider from "@material-ui/styles/ThemeProvider";
 class MyApp extends App {
   // Only uncomment this method if you have blocking data requirements for
   // every single page in your application. This disables the ability to

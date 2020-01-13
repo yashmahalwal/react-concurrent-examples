@@ -16,5 +16,9 @@
   },
   "license": "ISC",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@material-ui/styles": "^4.8.2",
+    "now": "^16.7.3"
+  }
 }
