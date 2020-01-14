@@ -35,7 +35,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 // Photo by Ben Libby from Pexels : CUP
-const List = Array.from({ length: 10000 }).map((_, index) => {
+const List = Array.from({ length: 100 }).map((_, index) => {
     let x: Item;
     const id = Math.random() * 1000 + Date.now();
     if (index % 2) {
@@ -57,7 +57,6 @@ const List = Array.from({ length: 10000 }).map((_, index) => {
     }
     return x;
 });
-console.log(List);
 const FilterableList: NextPage = props => {
     const [displayList, setList] = React.useState<Item[]>(List);
     const [searchTerm, setTerm] = React.useState<string>("");
@@ -66,11 +65,13 @@ const FilterableList: NextPage = props => {
     React.useEffect(() => {
         setList(
             List.filter(item => {
-                if (searchTerm)
+                if (searchTerm) {
+                    let i = 0;
+                    while (i <= 10000000) i++;
                     return item.title
                         .toLowerCase()
                         .includes(searchTerm.toLowerCase());
-                else return true;
+                } else return true;
             })
         );
     }, [searchTerm]);
